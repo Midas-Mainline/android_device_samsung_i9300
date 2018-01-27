@@ -115,6 +115,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/samsung/i9300/fstab.smdk4x12:root/fstab.smdk4x12 \
     device/samsung/i9300/init.smdk4x12.rc:root/init.smdk4x12.rc \
+    device/samsung/i9300/init.smdk4x12.usb.rc:root/init.smdk4x12.usb.rc \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \

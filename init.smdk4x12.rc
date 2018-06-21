@@ -1,0 +1,35 @@
+#
+# Copyright 2018 Joonas Kylmälä
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+on fs
+    mount_all /fstab.smdk4x12
+
+on early-boot
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 777 /dev/binder
+    chmod 777 /dev/hwbinder
+    chmod 777 /dev/vndbinder
+    chmod 755 /sys/kernel/debug
+    chmod 755 /sys/kernel/debug/sync
+    chown graphics graphics /sys/kernel/debug/sync/sw_sync
+    chmod 777 /sys/kernel/debug/sync/sw_sync
+    chmod 777 /dev/dri/card0
+    chmod 777 /dev/dri/renderD128
+    chmod 777 /dev/graphics/fb0
+    chown graphics graphics /sys/kernel/debug/sync/info
+
+    setprop debug.sf.no_hw_vsync 1
+    setprop hwc.drm.use_overlay_planes 1

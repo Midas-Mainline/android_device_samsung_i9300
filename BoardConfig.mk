@@ -26,7 +26,7 @@ TARGET_BOOTLOADER_BOARD_NAME := smdk4x12
 
 TARGET_NO_BOOTLOADER := true
 
-TARGET_RECOVERY_FSTAB := device/putti/i9305/fstab.smdk4x12
+TARGET_RECOVERY_FSTAB := device/samsung/i9305/fstab.smdk4x12
 
 TARGET_USERIMAGES_USE_EXT4 := true
 
@@ -52,4 +52,4 @@ BOARD_GPU_DRIVERS := swrast
 TARGET_USES_64_BIT_BINDER := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 
-DEVICE_MANIFEST_FILE := device/putti/i9305/manifest.xml
+DEVICE_MANIFEST_FILE := device/samsung/i9305/manifest.xml

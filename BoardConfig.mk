@@ -26,6 +26,11 @@ TARGET_BOOTLOADER_BOARD_NAME := smdk4x12
 
 TARGET_NO_BOOTLOADER := true
 
+# Kernel
+TARGET_KERNEL_SOURCE := kernel/replicant/linux
+TARGET_KERNEL_CONFIG := replicant_i9305_defconfig
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
+
 TARGET_RECOVERY_FSTAB := device/samsung/i9305/fstab.smdk4x12
 
 TARGET_USERIMAGES_USE_EXT4 := true

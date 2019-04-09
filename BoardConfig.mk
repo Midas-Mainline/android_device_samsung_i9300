@@ -31,7 +31,10 @@ TARGET_KERNEL_SOURCE := kernel/replicant/linux
 TARGET_KERNEL_CONFIG := replicant_i9305_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
+# Recover
 TARGET_RECOVERY_FSTAB := device/samsung/i9305/fstab.smdk4x12
+BOARD_USES_FULL_RECOVERY_IMAGE := false
+BOARD_USES_RECOVERY_AS_BOOT := false
 
 TARGET_USERIMAGES_USE_EXT4 := true
 
@@ -55,6 +58,6 @@ BOARD_USES_DRM_HWCOMPOSER := true
 BOARD_GPU_DRIVERS := swrast
 
 TARGET_USES_64_BIT_BINDER := true
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 DEVICE_MANIFEST_FILE := device/samsung/i9305/manifest.xml

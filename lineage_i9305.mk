@@ -14,14 +14,15 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, device/samsung/i9305/device.mk)
+$(call inherit-product, vendor/lineage/config/common_full.mk)
 
-PRODUCT_NAME := aosp_i9305
+PRODUCT_NAME := lineage_i9305
 PRODUCT_DEVICE := i9305
 PRODUCT_BRAND := Putti
-PRODUCT_MODEL := AOSP on i9305
+PRODUCT_MODEL := Lineage on i9305
 PRODUCT_MANUFACTURER := Putti
 
 # Disable A/B update

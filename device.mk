@@ -102,3 +102,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_tv.xml:system/etc/media_codecs_google_tv.xml \
+
+# Get root on the serial console for -eng builds
+# This can help debugging early boot issues
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+PRODUCT_COPY_FILES += device/samsung/i9305/console.rc:system/etc/init/console.rc
+endif

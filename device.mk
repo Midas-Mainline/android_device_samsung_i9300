@@ -108,3 +108,8 @@ PRODUCT_COPY_FILES += \
 ifeq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_COPY_FILES += device/samsung/i9305/console.rc:system/etc/init/console.rc
 endif
+
+# ADB support
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=adb

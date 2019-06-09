@@ -30,15 +30,33 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
 
 # Audio
-PRODUCT_PACKAGES += \
-    audio.primary.default \
+PRODUCT_PACKAGES += audio.primary.i9305
+PRODUCT_PACKAGES += audio.primary.i9305_legacy
+PRODUCT_PACKAGES += android.hardware.audio@4.0-impl
+PRODUCT_PACKAGES += android.hardware.audio@4.0-service
+PRODUCT_PACKAGES += android.hardware.audio.effect@4.0-impl
+PRODUCT_PACKAGES += android.hardware.audio.effect@4.0-service
 
-# Audio HAL packages
+# A2DP
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio@2.0-service \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.soundtrigger@2.0-impl \
+  audio.a2dp.default \
+  android.hardware.bluetooth.a2dp@1.0-impl \
+  android.hardware.bluetooth.a2dp@1.0-service \
+
+# Sound trigger
+PRODUCT_PACKAGES += \
+    sound_trigger.stub.default \
+    android.hardware.soundtrigger@2.1-impl \
+    android.hardware.soundtrigger@2.1-service \
+
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libeffects/data/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    device/samsung/i9305/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
+    frameworks/av/services/audiopolicy/config/audio_policy_configuration_generic.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/primary_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/primary_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
 # DRM HAL packages
 PRODUCT_PACKAGES += \

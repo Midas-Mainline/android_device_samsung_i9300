@@ -113,3 +113,6 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.adb.enable=1 \
     persist.sys.usb.config=adb
+
+# Hack to get a working GateKeeper
+PRODUCT_PACKAGES += gatekeeper.default

@@ -47,3 +47,6 @@ on init
     # Create mount-point for ConfigFS USB gadgets
     # Add standard gadget entries
     mount configfs none /config
+
+on post-fs-data
+    setprop vold.post_fs_data_done 1

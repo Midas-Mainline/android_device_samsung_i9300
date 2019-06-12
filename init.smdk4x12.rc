@@ -53,3 +53,9 @@ on init
 
 on post-fs-data
     setprop vold.post_fs_data_done 1
+    start resize2fs_partitions
+
+service resize2fs_partitions /system/bin/resize2fs_partitions.sh
+    class main
+    oneshot
+    disabled

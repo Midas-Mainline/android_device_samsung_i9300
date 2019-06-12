@@ -134,3 +134,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Hack to get a working GateKeeper
 PRODUCT_PACKAGES += gatekeeper.default
+
+# Enable flashing through heimdall
+PRODUCT_COPY_FILES += device/samsung/i9305/resize2fs_partitions.sh:system/bin/resize2fs_partitions.sh

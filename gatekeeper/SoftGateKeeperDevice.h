@@ -23,7 +23,7 @@
 
 using namespace gatekeeper;
 
-namespace i9305 {
+namespace i9300 {
 
 /**
  * Software based GateKeeper implementation

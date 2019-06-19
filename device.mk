@@ -114,8 +114,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
 
 PRODUCT_COPY_FILES += \
-    device/samsung/i9305/fstab.smdk4x12:root/fstab.smdk4x12 \
-    device/samsung/i9305/init.smdk4x12.rc:root/init.smdk4x12.rc \
+    device/samsung/i9300/fstab.smdk4x12:root/fstab.smdk4x12 \
+    device/samsung/i9300/init.smdk4x12.rc:root/init.smdk4x12.rc \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
@@ -126,7 +126,7 @@ PRODUCT_COPY_FILES += \
 # Get root on the serial console for -eng builds
 # This can help debugging early boot issues
 ifeq ($(TARGET_BUILD_VARIANT),eng)
-PRODUCT_COPY_FILES += device/samsung/i9305/console.rc:system/etc/init/console.rc
+PRODUCT_COPY_FILES += device/samsung/i9300/console.rc:system/etc/init/console.rc
 endif
 
 # ADB support
@@ -138,10 +138,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += gatekeeper.default
 
 # Enable flashing through heimdall
-PRODUCT_COPY_FILES += device/samsung/i9305/resize2fs_partitions.sh:system/bin/resize2fs_partitions.sh
+PRODUCT_COPY_FILES += device/samsung/i9300/resize2fs_partitions.sh:system/bin/resize2fs_partitions.sh
 
 # HACK: prevent the device to go in suspend because it's annoying during early
 # development. Remove afterward as it consume way more energy this way.
-PRODUCT_COPY_FILES += device/samsung/i9305/prevent_suspend.sh:system/bin/prevent_suspend.sh
-PRODUCT_COPY_FILES += device/samsung/i9305/prevent_suspend.rc:system/etc/init/prevent_suspend.rc
+PRODUCT_COPY_FILES += device/samsung/i9300/prevent_suspend.sh:system/bin/prevent_suspend.sh
+PRODUCT_COPY_FILES += device/samsung/i9300/prevent_suspend.rc:system/etc/init/prevent_suspend.rc
 

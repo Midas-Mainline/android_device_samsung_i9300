@@ -1,16 +1,16 @@
-# Device tree for Samsung Galaxy SIII 4G (GT-I9305)
+# Device tree for Samsung Galaxy SIII (GT-I9300)
 
 Run the following commands to build AOSP:
 
 `
 . build/envsetup.sh
-lunch lineage_i9305-eng
+lunch lineage_i9300-eng
 make -j9
 `
 
 Run the following command to test the built image:
 
-`heimdall flash --BOOT out/target/product/i9305/boot.img --SYSTEM out/target/product/i9305/system.img`
+`heimdall flash --BOOT out/target/product/i9300/boot.img --SYSTEM out/target/product/i9300/system.img`
 
 # License
 

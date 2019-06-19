@@ -18,7 +18,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_VENDOR_MODULE := true
-LOCAL_MODULE := gatekeeper.default
+LOCAL_MODULE := gatekeeper.i9300
 LOCAL_MODULE_RELATIVE_PATH := hw
 
 LOCAL_CFLAGS := -Wall -Wextra -Werror -Wunused

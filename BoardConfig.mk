@@ -39,10 +39,10 @@ BOARD_VENDOR := samsung
 TARGET_KERNEL_SOURCE := kernel/replicant/linux
 TARGET_KERNEL_CONFIG := replicant_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
-BOARD_DTB_IMAGE_NAME := exynos4412-i9305.dtb
+BOARD_DTB_IMAGE_NAME := exynos4412-i9300.dtb
 
 # Recover
-TARGET_RECOVERY_FSTAB := device/samsung/i9305/fstab.smdk4x12
+TARGET_RECOVERY_FSTAB := device/samsung/i9300/fstab.smdk4x12
 BOARD_USES_FULL_RECOVERY_IMAGE := false
 BOARD_USES_RECOVERY_AS_BOOT := false
 
@@ -75,6 +75,7 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 BOARD_USES_GENERIC_AUDIO := true
 
-DEVICE_MANIFEST_FILE := device/samsung/i9305/manifest.xml
+
+DEVICE_MANIFEST_FILE := device/samsung/i9300/manifest.xml
 
 USE_XML_AUDIO_POLICY_CONF := 1

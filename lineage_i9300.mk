@@ -16,14 +16,14 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
-$(call inherit-product, device/samsung/i9305/device.mk)
-$(call inherit-product, vendor/lineage/config/common_full.mk)
+$(call inherit-product, device/samsung/i9300/device.mk)
+$(call inherit-product, vendor/lineage/config/common_phone.mk)
 $(call inherit-product, hardware/samsung/Android.mk)
 
-PRODUCT_NAME := lineage_i9305
-PRODUCT_DEVICE := i9305
+PRODUCT_NAME := lineage_i9300
+PRODUCT_DEVICE := i9300
 PRODUCT_BRAND := Samsung
-PRODUCT_MODEL := Lineage on i9305
+PRODUCT_MODEL := Lineage on i9300
 PRODUCT_MANUFACTURER := Samsung
 
 # Disable A/B update

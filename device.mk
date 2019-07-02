@@ -96,7 +96,9 @@ PRODUCT_PACKAGES += \
 # Memory HAL packages
 PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
     android.hidl.memory@1.0-impl \
+    android.hidl.memory@1.0-service \
 
 # Sensors HAL packages
 PRODUCT_PACKAGES += \

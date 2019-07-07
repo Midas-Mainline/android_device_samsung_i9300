@@ -32,6 +32,7 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += audio.primary.i9305
 PRODUCT_PACKAGES += audio.primary.i9305_legacy
+PRODUCT_PACKAGES += android.hardware.audio@2.0-service
 PRODUCT_PACKAGES += android.hardware.audio@4.0-impl
 PRODUCT_PACKAGES += android.hardware.audio@4.0-service
 PRODUCT_PACKAGES += android.hardware.audio.effect@4.0-impl

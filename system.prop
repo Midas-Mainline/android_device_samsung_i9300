@@ -18,5 +18,5 @@ ro.sf.lcd_density=320
 ro.hardware.hwcomposer=drm
 ro.hardware.gralloc=gbm
 drm.gpu.force_software=1
-hwc.drm.device=/dev/dri/card1
-gralloc.gbm.device=/dev/dri/renderD128
+hwc.drm.device=/dev/dri/card0
+#gralloc.gbm.device=/dev/dri/card0

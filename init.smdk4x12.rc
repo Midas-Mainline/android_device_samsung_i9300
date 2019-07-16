@@ -39,9 +39,7 @@ on early-boot
     chown graphics graphics /sys/kernel/debug/sync/sw_sync
     chmod 777 /sys/kernel/debug/sync/sw_sync
     chmod 777 /dev/dri/card0
-    chmod 777 /dev/dri/card1
     chmod 777 /dev/dri/renderD128
-    chmod 777 /dev/dri/renderD129
     chmod 777 /dev/graphics/fb0
     chown graphics graphics /sys/kernel/debug/sync/info
 

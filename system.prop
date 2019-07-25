@@ -20,4 +20,5 @@ ro.hardware.gralloc=gbm
 drm.gpu.force_software=1
 hwc.drm.device=/dev/dri/card0
 gralloc.gbm.device=/dev/dri/renderD128
+ro.config.avoid_gfx_accel=1
 debug.sf.nobootanimation=1

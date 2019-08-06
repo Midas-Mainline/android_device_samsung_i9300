@@ -29,9 +29,17 @@ TARGET_NO_BOOTLOADER := true
 BOARD_VENDOR := samsung
 
 # Kernel
+# To append the dtb to the zImage:
+# - Use BOARD_DTB_IMAGE_NAME with the right dtb
+# - Make sure that your kernel source doesn't have
+#   any Android patches that would add the zImage-dtb
+#   target.
+# The vendor/lineage/build/tasks/kernel.mk file
+# was modified to add support for that feature.
 TARGET_KERNEL_SOURCE := kernel/replicant/linux
-TARGET_KERNEL_CONFIG := replicant_i9305_defconfig
+TARGET_KERNEL_CONFIG := replicant_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
+BOARD_DTB_IMAGE_NAME := exynos4412-i9305.dtb
 
 # Recover
 TARGET_RECOVERY_FSTAB := device/samsung/i9305/fstab.smdk4x12

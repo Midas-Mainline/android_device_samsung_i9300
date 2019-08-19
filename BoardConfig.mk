@@ -31,6 +31,9 @@ TARGET_KERNEL_SOURCE := kernel/replicant/linux
 TARGET_KERNEL_CONFIG := replicant_i9300_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
+KERNEL_TOOLCHAIN := $(shell echo $$ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-8.3/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
+
 # Recover
 TARGET_RECOVERY_FSTAB := device/samsung/i9300/fstab.smdk4x12
 BOARD_USES_FULL_RECOVERY_IMAGE := false

@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo lineage_i9305-userdebug
+add_lunch_combo lineage_i9300-userdebug

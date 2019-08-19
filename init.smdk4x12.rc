@@ -16,7 +16,7 @@
 
 on boot
     # Audio support
-    setprop ro.hardware.audio.primary i9305
+    setprop ro.hardware.audio.primary i9300
     # adb support
     mkdir /dev/usb-ffs 0770 shell shell
     mkdir /dev/usb-ffs/adb 0770 shell shell

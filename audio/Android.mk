@@ -18,7 +18,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_VENDOR_MODULE := true
-LOCAL_MODULE := audio.primary.i9305
+LOCAL_MODULE := audio.primary.i9300
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE_TAGS := optional
 
@@ -41,7 +41,7 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_VENDOR_MODULE := true
-LOCAL_MODULE := audio.primary.i9305_legacy
+LOCAL_MODULE := audio.primary.i9300_legacy
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE_TAGS := optional
 

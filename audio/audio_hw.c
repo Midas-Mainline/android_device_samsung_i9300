@@ -1656,10 +1656,10 @@ fallback_init(void)
 
     ALOGD("Emulator without host-side ALSA audio emulation detected.");
 #if __LP64__
-    module = dlopen("/vendor/lib64/hw/audio.primary.i9305_legacy.so",
+    module = dlopen("/vendor/lib64/hw/audio.primary.i9300_legacy.so",
                     RTLD_LAZY|RTLD_LOCAL);
 #else
-    module = dlopen("/vendor/lib/hw/audio.primary.i9305_legacy.so",
+    module = dlopen("/vendor/lib/hw/audio.primary.i9300_legacy.so",
                     RTLD_LAZY|RTLD_LOCAL);
 #endif
     if (module != NULL) {

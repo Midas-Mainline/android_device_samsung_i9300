@@ -80,6 +80,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service \
+    lights.smdk4x12 \
 
 # Vibrator HAL packages
 PRODUCT_PACKAGES += \

@@ -26,6 +26,8 @@ TARGET_BOOTLOADER_BOARD_NAME := smdk4x12
 
 TARGET_NO_BOOTLOADER := true
 
+BOARD_VENDOR := samsung
+
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/replicant/linux
 TARGET_KERNEL_CONFIG := replicant_i9305_defconfig

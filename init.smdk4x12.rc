@@ -37,8 +37,8 @@ on early-boot
     chmod 777 /dev/graphics/fb0
     chown graphics graphics /sys/kernel/debug/sync/info
 
-    setprop debug.sf.no_hw_vsync 1
-    setprop hwc.drm.use_overlay_planes 1
+    #setprop debug.sf.no_hw_vsync 1
+    #setprop hwc.drm.use_overlay_planes 1
 
 on init
     # Create mount-point for ConfigFS USB gadgets

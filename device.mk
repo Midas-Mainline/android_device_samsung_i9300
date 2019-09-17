@@ -25,6 +25,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gralloc.gbm \
     hwcomposer.drm \
+    hwcomposer.drm_minigbm \
+    gralloc.minigbm \
     libGLES_mesa \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.composer@2.1-service \

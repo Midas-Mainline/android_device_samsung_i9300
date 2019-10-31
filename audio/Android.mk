@@ -1,4 +1,3 @@
-#
 # Copyright (C) 2011 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,42 +16,18 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_VENDOR_MODULE := true
-LOCAL_MODULE := audio.primary.i9300
-LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_MODULE := audio.primary.$(TARGET_BOOTLOADER_BOARD_NAME)
+LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_SHARED_LIBRARIES := libcutils liblog
-
-LOCAL_SRC_FILES := audio_hw.c
+LOCAL_SRC_FILES := audio_hw.c ril_interface.c
 
 LOCAL_C_INCLUDES += \
-			external/tinyalsa/include \
+	external/tinyalsa/include \
+	external/expat/lib \
+	$(call include-path-for, audio-utils) \
+	$(call include-path-for, audio-effects)
 
-LOCAL_SHARED_LIBRARIES += \
-			libdl \
-			libtinyalsa
-
-LOCAL_CFLAGS := -Wno-unused-parameter
-LOCAL_HEADER_LIBRARIES := libhardware_headers
-
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
-
-LOCAL_VENDOR_MODULE := true
-LOCAL_MODULE := audio.primary.i9300_legacy
-LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_MODULE_TAGS := optional
-
-LOCAL_SHARED_LIBRARIES := libcutils liblog
-
-LOCAL_SRC_FILES := audio_hw_legacy.c
-
-LOCAL_SHARED_LIBRARIES += \
-			libdl
-
-LOCAL_CFLAGS := -Wno-unused-parameter
-LOCAL_HEADER_LIBRARIES := libhardware_headers
+LOCAL_SHARED_LIBRARIES := liblog libcutils libtinyalsa libaudioutils libdl libexpat
 
 include $(BUILD_SHARED_LIBRARY)

@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+COMMON_PATH := device/samsung/i9300
+
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
@@ -32,34 +34,21 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
 
 # Audio
-PRODUCT_PACKAGES += audio.primary.i9300
-PRODUCT_PACKAGES += audio.primary.i9300_legacy
-PRODUCT_PACKAGES += android.hardware.audio@2.0-service
-PRODUCT_PACKAGES += android.hardware.audio@4.0-impl
-PRODUCT_PACKAGES += android.hardware.audio@4.0-service
-PRODUCT_PACKAGES += android.hardware.audio.effect@4.0-impl
-PRODUCT_PACKAGES += android.hardware.audio.effect@4.0-service
-
-# A2DP
-PRODUCT_PACKAGES += \
-  audio.a2dp.default \
-  android.hardware.bluetooth.a2dp@1.0-impl \
-  android.hardware.bluetooth.a2dp@1.0-service \
-
-# Sound trigger
-PRODUCT_PACKAGES += \
-    sound_trigger.stub.default \
-    android.hardware.soundtrigger@2.1-impl \
-    android.hardware.soundtrigger@2.1-service \
-
 PRODUCT_COPY_FILES += \
-    frameworks/av/media/libeffects/data/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    device/samsung/i9300/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
-    frameworks/av/services/audiopolicy/config/audio_policy_configuration_generic.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/primary_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/primary_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
+    $(COMMON_PATH)/configs/audio_effects.conf:system/etc/audio_effects.conf \
+    $(COMMON_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
+
+# Audio
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/i9300
+
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    audio.a2dp.default \
+    audio.primary.smdk4x12 \
+    audio.r_submix.default \
+    audio.usb.default
 
 # DRM HAL packages
 PRODUCT_PACKAGES += \

@@ -104,6 +104,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
 
 PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
+    $(COMMON_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
+
+PRODUCT_COPY_FILES += \
     device/samsung/i9300/fstab.smdk4x12:root/fstab.smdk4x12 \
     device/samsung/i9300/init.smdk4x12.rc:root/init.smdk4x12.rc \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \

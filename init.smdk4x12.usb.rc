@@ -17,5 +17,3 @@ on boot
     mount functionfs mtp /dev/usb-ffs/mtp rmode=0770,fmode=0660,uid=1024,gid=1024,no_disconnect=1
     setprop sys.usb.configfs 1
     setprop sys.usb.controller "12480000.hsotg"
-    # Hack to make sure to get adbd at boot
-    start adbd

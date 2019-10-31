@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-import /init.smdk4x12.usb.rc
-
 on boot
     # Audio support
     setprop ro.hardware.audio.primary i9300

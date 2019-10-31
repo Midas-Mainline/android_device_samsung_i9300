@@ -20,3 +20,10 @@
 # Recovery
 /dev/block/platform/soc/12550000.mmc/by-name/BOOT	/boot		emmc defaults recoveryonly
 /dev/block/platform/soc/12550000.mmc/by-name/RECOVERY	/recovery	emmc defaults recoveryonly
+
+# vold-managed volumes ("block device" is actually a sysfs devpath)
+/devices/platform/soc/12530000.sdhci/mmc_host/mmc0/mmc0*/mmcblk0		auto		auto		defaults		voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/platform/soc/12480000.hsotg*					auto		auto		defaults		voldmanaged=usb:auto
+
+# zram
+#/dev/block/zram0			none				swap		defaults		zramsize=419430400,zramstreams=2

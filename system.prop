@@ -23,3 +23,4 @@ hwc.drm.device=/dev/dri/card1
 gralloc.gbm.device=/dev/dri/card1
 ro.config.avoid_gfx_accel=1
 debug.sf.nobootanimation=1
+ro.sys.sdcard_fuse=true

@@ -1,13 +1,5 @@
 # Device tree for Samsung Galaxy SIII 4G (GT-I9305)
 
-This device tree can be used in combination with the AOSP master
-branches and the mainlinish Linux kernel developed at
-git@git.putti.eu:aosp/kernel_i9305.git
-
-Compile the kernel with: `ARCH=arm make midas_defconfig && ARCH=arm CROSS_COMPILE=arm-none-eabi- make zImage dtbs && cat arch/arm/boot/zImage arch/arm/boot/dts/exynos4412-i9305.dtb > Image.gz-dtb`
-
-Copy the compiled kernel then to device/samsung/i9305-kernel/.
-
 Run the following commands to build AOSP:
 
 `

@@ -4,7 +4,7 @@ Run the following commands to build AOSP:
 
 `
 . build/envsetup.sh
-lunch lineage_i9305-userdebug
+lunch lineage_i9305-eng
 make -j9
 `
 

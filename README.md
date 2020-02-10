@@ -1,4 +1,4 @@
-# Device tree for Samsung Galaxy S3 (i9305)
+# Device tree for Samsung Galaxy SIII 4G (GT-I9305)
 
 This device tree can be used in combination with the AOSP master
 branches and the mainlinish Linux kernel developed at

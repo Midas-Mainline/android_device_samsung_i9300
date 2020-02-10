@@ -22,9 +22,9 @@ $(call inherit-product, hardware/samsung/Android.mk)
 
 PRODUCT_NAME := lineage_i9305
 PRODUCT_DEVICE := i9305
-PRODUCT_BRAND := Putti
+PRODUCT_BRAND := Samsung
 PRODUCT_MODEL := Lineage on i9305
-PRODUCT_MANUFACTURER := Putti
+PRODUCT_MANUFACTURER := Samsung
 
 # Disable A/B update
 AB_OTA_UPDATER := false

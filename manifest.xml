@@ -123,13 +123,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal>
-        <name>android.hardware.memtrack</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IMemtrack</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
 </manifest>

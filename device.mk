@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+$(call inherit-product, device/samsung/midas-common/midas.mk)
+
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 

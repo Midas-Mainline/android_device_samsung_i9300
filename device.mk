@@ -78,12 +78,6 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.renderscript@1.0-impl \
 
-# Light HAL packages
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service \
-    lights.smdk4x12 \
-
 # Vibrator HAL packages
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \

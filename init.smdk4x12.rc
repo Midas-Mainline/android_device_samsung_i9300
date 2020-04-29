@@ -54,3 +54,9 @@ service resize2fs_partitions /system/bin/resize2fs_partitions.sh
     class main
     oneshot
     disabled
+
+on fs
+    # Load Wifi firmware
+    insmod /system/vendor/lib/modules/cfg80211.ko
+    insmod /system/vendor/lib/modules/brcmutil.ko
+    insmod /system/vendor/lib/modules/brcmfmac.ko

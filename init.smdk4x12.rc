@@ -48,11 +48,6 @@ on early-boot
     setprop debug.sf.no_hw_vsync 1
     setprop hwc.drm.use_overlay_planes 0 # 1 causes graphics corruption with Lima
 
-on init
-    # Create mount-point for ConfigFS USB gadgets
-    # Add standard gadget entries
-    mount configfs none /config
-
 on post-fs-data
     setprop vold.post_fs_data_done 1
     start resize2fs_partitions

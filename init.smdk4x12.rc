@@ -34,6 +34,7 @@ on early-boot
     chmod 777 /dev/binder
     chmod 777 /dev/hwbinder
     chmod 777 /dev/vndbinder
+    chmod 777 /dev/ion # used by OMX / libstagefright
     chmod 755 /sys/kernel/debug
     chmod 755 /sys/kernel/debug/sync
     chown graphics graphics /sys/kernel/debug/sync/sw_sync

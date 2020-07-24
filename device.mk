@@ -16,6 +16,9 @@
 
 $(call inherit-product, device/samsung/midas-common/midas.mk)
 
+PRODUCT_PACKAGES += \
+    libsamsung-ipc \
+
 PRODUCT_COPY_FILES += \
     device/samsung/i9300/fstab.smdk4x12:root/fstab.smdk4x12 \
     device/samsung/i9300/init.smdk4x12.rc:root/init.smdk4x12.rc \

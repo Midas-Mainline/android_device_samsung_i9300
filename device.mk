@@ -18,6 +18,7 @@ $(call inherit-product, device/samsung/midas-common/midas.mk)
 
 PRODUCT_PACKAGES += \
     libsamsung-ipc \
+    libsamsung-ril \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.smdk4x12:root/fstab.smdk4x12 \

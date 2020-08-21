@@ -18,8 +18,8 @@
 
 BOARD_DTB_IMAGE_NAME := exynos4412-i9300.dtb
 
-# Recover
-TARGET_RECOVERY_FSTAB := device/samsung/i9300/fstab.smdk4x12
+# Recovery
+TARGET_RECOVERY_FSTAB := device/samsung/i9300/fstab.recovery
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1610612736
 # TODO: figure out if it is possible to increase USERDATA partition size

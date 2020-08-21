@@ -16,6 +16,10 @@
 
 $(call inherit-product, device/samsung/midas-common/midas.mk)
 
+# Audio
+PRODUCT_COPY_FILES += \
+    device/samsung/i9300/configs/tiny_hw.xml:system/etc/sound/i9300
+
 PRODUCT_PACKAGES += \
     libsamsung-ipc \
 

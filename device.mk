@@ -14,24 +14,18 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/i9300
-COMMON_PATH := device/samsung/midas-common
-
-# Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
-$(call inherit-product, $(COMMON_PATH)/midas.mk)
+$(call inherit-product, device/samsung/midas-common/midas.mk)
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/i9300
+    device/samsung/i9300/configs/tiny_hw.xml:system/etc/sound/i9300
 
 PRODUCT_PACKAGES += \
     libsamsung-ipc \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.smdk4x12:root/fstab.smdk4x12 \
-    $(LOCAL_PATH)/init.smdk4x12.rc:root/init.smdk4x12.rc \
+    device/samsung/i9300/fstab.smdk4x12:root/fstab.smdk4x12 \
+    device/samsung/i9300/init.smdk4x12.rc:root/init.smdk4x12.rc \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
     frameworks/av/media/libstagefright/data/media_codecs_sw.xml:system/etc/media_codecs.xml \

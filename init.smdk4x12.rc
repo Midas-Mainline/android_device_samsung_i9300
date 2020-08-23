@@ -56,6 +56,10 @@ on fs
     insmod /system/vendor/lib/modules/cfg80211.ko
     insmod /system/vendor/lib/modules/brcmutil.ko
     insmod /system/vendor/lib/modules/brcmfmac.ko
+    # Load MFC firmware
+    insmod /system/vendor/lib/modules/v4l2-tpg.ko
+    insmod /system/vendor/lib/modules/vivid.ko
+    insmod /system/vendor/lib/modules/s5p-mfc.ko
 
 on post-fs-data
 # for wifi

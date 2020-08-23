@@ -35,3 +35,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
     frameworks/av/media/libstagefright/data/media_codecs_sw.xml:system/etc/media_codecs.xml \
+
+# These are the hardware-specific features
+PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/libstlport.so:system/lib/libstlport.so \
+    $(LOCAL_PATH)/libsec-ril.so:system/lib/libsec-ril.so \
+    $(LOCAL_PATH)/cbd:system/bin/cbd

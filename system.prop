@@ -23,3 +23,8 @@ gralloc.gbm.device=/dev/dri/card1
 ro.config.avoid_gfx_accel=1
 debug.sf.nobootanimation=1
 ro.sys.sdcard_fuse=true
+
+rild.libpath=/system/lib/libsecril-shim.so
+rild.libargs=-d /dev/ttyS0
+ro.ril.telephony.mqanelements=5
+ro.ril.telephony.nstrings=4

@@ -116,3 +116,18 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
+
+# cbd
+service cpboot-daemon /system/bin/cbd -d
+    class main
+    user root
+    group radio cache inet misc audio sdcard_rw log
+    seclabel u:r:cpboot-daemon:s0
+
+# Workaround for broken incall audio
+service bootsnd /system/bin/tinyplay /system/etc/sound/silence.wav -D 0 -d 0 -p 880
+    class late_start
+    user root
+    group audio
+    oneshot
+    seclabel u:r:tinyplay:s0

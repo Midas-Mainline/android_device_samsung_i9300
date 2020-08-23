@@ -17,6 +17,7 @@
 ro.sf.lcd_density=320
 ro.hardware.hwcomposer=drm
 ro.hardware.gralloc=gbm
+hwc.drm.use_overlay_planes=0
 hwc.drm.device=/dev/dri/card1
 gralloc.gbm.device=/dev/dri/card1
 ro.config.avoid_gfx_accel=1

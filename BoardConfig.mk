@@ -16,8 +16,6 @@
 
 -include device/samsung/midas-common/BoardConfigCommon.mk
 
-BOARD_DTB_IMAGE_NAME := exynos4412-i9300.dtb
-
 # Recover
 TARGET_RECOVERY_FSTAB := device/samsung/i9300/fstab.smdk4x12
 

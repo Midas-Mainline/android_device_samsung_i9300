@@ -19,7 +19,7 @@
 # Kernel
 BOARD_DTB_IMAGE_NAME := exynos4412-i9300.dtb
 
-# Recover
+# Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/i9300/fstab.smdk4x12
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 

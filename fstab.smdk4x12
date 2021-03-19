@@ -20,3 +20,4 @@
 # Recovery
 /dev/block/platform/soc/12550000.mmc/by-name/BOOT	/boot		emmc defaults recoveryonly
 /dev/block/platform/soc/12550000.mmc/by-name/RECOVERY	/recovery	emmc defaults recoveryonly
+/dev/block/zram0			none				swap		defaults		zramsize=734003200

@@ -28,6 +28,7 @@ on boot
 
 on fs
     mount_all /fstab.smdk4x12
+    swapon_all /fstab.smdk4x12
 
 on early-boot
     mount debugfs debugfs /sys/kernel/debug
@@ -92,7 +93,6 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
     start resize2fs_partitions
-
 
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug

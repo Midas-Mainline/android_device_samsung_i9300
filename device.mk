@@ -20,6 +20,9 @@ PRODUCT_PACKAGES += \
     libsamsung-ipc \
     libsamsung-ril \
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.ccodec=0
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.smdk4x12:root/fstab.smdk4x12 \
     $(LOCAL_PATH)/init.smdk4x12.rc:root/init.smdk4x12.rc \

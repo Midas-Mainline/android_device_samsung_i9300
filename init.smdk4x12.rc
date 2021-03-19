@@ -94,6 +94,12 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
     start resize2fs_partitions
 
+on property:wlan.driver.status=ok
+    write /sys/power/wake_lock wifi
+
+on property:wlan.driver.status=unloaded
+    write /sys/power/wake_unlock wifi
+
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 

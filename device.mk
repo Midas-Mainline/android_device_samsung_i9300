@@ -31,3 +31,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
     frameworks/av/media/libstagefright/data/media_codecs_sw.xml:system/etc/media_codecs.xml \
+
+# Vendor properties
+-include $(LOCAL_PATH)/vendor_prop.mk

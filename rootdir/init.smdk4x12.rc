@@ -14,7 +14,21 @@
 # limitations under the License.
 #
 
+import /vendor/etc/init/hw/init.smdk4x12.usb.rc
+
+## init goal order
+# early-init, init, late-init
+# early-fs, fs, post-fs, late-fs, post-fs-data
+# load_persist_props_action
+# zygote-start
+# firmware_mounts_complete
+# early-boot, boot
+
 on early-init
+    mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
+    mkdir /dev/input
+
+    write /sys/module/firmware_class/parameters/path /vendor/lib/firmware
     setprop ro.hardware.audio.primary i9300
 
 on boot
@@ -29,11 +43,12 @@ on boot
     start adbd
 
 on fs
-    mount_all /fstab.smdk4x12
-    swapon_all /fstab.smdk4x12
+    swapon_all /vendor/etc/fstab.${ro.hardware}
+    # non early mounts
+    mount_all /vendor/etc/fstab.${ro.hardware} --late
+    setprop ro.crypto.fuse_sdcard false
 
 on early-boot
-    mount debugfs debugfs /sys/kernel/debug
     chmod 777 /dev/binder
     chmod 777 /dev/hwbinder
     chmod 777 /dev/vndbinder
@@ -60,9 +75,36 @@ on fs
     insmod /system/vendor/lib/modules/brcmutil.ko
     insmod /system/vendor/lib/modules/brcmfmac.ko
 
+on post-fs
+    setrlimit 8 67108864 67108864
+
 on post-fs-data
 # Disable serial console warning
     setprop init.svc.console stopped
+    setprop vold.post_fs_data_done 1
+    start resize2fs_partitions
+
+on property:wlan.driver.status=ok
+    write /sys/power/wake_lock wifi
+
+on property:wlan.driver.status=unloaded
+    write /sys/power/wake_unlock wifi
+
+on boot
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
+
+    setprop ro.build.product smdk4x12
+    setprop ro.product.device smdk4x12
+    setprop wifi.interface wlan0
+    # default country code
+    setprop ro.boot.wificountrycode 00
+# Wifi firmware reload path
+    chown wifi wifi /sys/module/brcmfmac/parameters/alternative_fw_path
+
+on late-fs
+    start bootanim
+
+on zygote-start
 # for wifi
     mkdir /data/misc/dhcp 0775 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
@@ -76,7 +118,7 @@ on post-fs-data
     chown wifi root /dev/rfkill
 
     # Create the directories used by the Wireless subsystem
-    mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/vendor/wifi 0771 wifi wifi
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
@@ -95,23 +137,9 @@ on post-fs-data
     chown system root /data/.mac.info
     chmod 0664 /data/.mac.info
 
-    setprop vold.post_fs_data_done 1
-    start resize2fs_partitions
-
-on property:wlan.driver.status=ok
-    write /sys/power/wake_lock wifi
-
-on property:wlan.driver.status=unloaded
-    write /sys/power/wake_unlock wifi
-
-on boot
-    mount debugfs /sys/kernel/debug /sys/kernel/debug
-
-    setprop ro.build.product smdk4x12
-    setprop ro.product.device smdk4x12
-    setprop wifi.interface wlan0
-# Wifi firmware reload path
-    chown wifi wifi /sys/module/brcmfmac/parameters/alternative_fw_path
+    #Create directories for wifihal services
+    mkdir /dev/socket/wifihal 0770 wifi wifi
+    chmod 2770 /dev/socket/wifihal
 
 # HACK to fix webview crash
 on property:sys.boot_completed=1

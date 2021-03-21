@@ -20,9 +20,6 @@ PRODUCT_PACKAGES += \
     libsamsung-ipc \
     libsamsung-ril \
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.stagefright.ccodec=0
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.smdk4x12:root/fstab.smdk4x12 \
     $(LOCAL_PATH)/init.smdk4x12.rc:root/init.smdk4x12.rc \
@@ -30,7 +27,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_sw.xml:system/etc/media_codecs.xml \
 
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_prop.mk

@@ -14,9 +14,11 @@
 # limitations under the License.
 #
 
+on early-init
+    setprop ro.hardware.audio.primary i9300
+
 on boot
     # Audio support
-    setprop ro.hardware.audio.primary exynos4
     # adb support
     mkdir /dev/usb-ffs 0770 shell shell
     mkdir /dev/usb-ffs/adb 0770 shell shell

@@ -31,6 +31,29 @@ on early-init
     write /sys/module/firmware_class/parameters/path /vendor/lib/firmware
     setprop ro.hardware.audio.primary i9300
 
+    setprop ro.hardware.sensors iio
+
+    setprop ro.iio.magn.name "AK8975 Magnetometer"
+    setprop ro.iio.magn.vendor "Asahi-Kasei"
+    setprop ro.iio.magn.quirks "no-trig,no-event"
+
+    setprop ro.iio.accel.name "LSM330DLC Accelerometer"
+    setprop ro.iio.accel.vendor "ST Microelectronics"
+    setprop ro.iio.accel.quirks "no-trig,no-event"
+    write /sys/bus/iio/devices/iio:device0/sampling_frequency 400
+    
+    setprop ro.iio.anglvel.name "LSM330DLC Gyroscope"
+    setprop ro.iio.anglvel.vendor "ST Microelectronics"
+    setprop ro.iio.anglvel.quirks "no-trig,no-event"
+
+    setprop ro.iio.proximity.name "CM36651 Proximity Sensor"
+    setprop ro.iio.proximity.vendor "Capella"
+    setprop ro.iio.proximity.quirks "no-trig,no-event"
+
+    setprop ro.iio.illuminance.name "CM36651 Light Sensor"
+    setprop ro.iio.illuminance.vendor "Capella"
+    setprop ro.iio.illuminance.quirks "no-trig,no-event"
+
 on boot
     # Audio support
     # adb support

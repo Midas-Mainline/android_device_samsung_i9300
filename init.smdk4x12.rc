@@ -59,6 +59,8 @@ on fs
     insmod /system/vendor/lib/modules/brcmfmac.ko
 
 on post-fs-data
+# Disable serial console warning
+    setprop init.svc.console stopped
 # for wifi
     mkdir /data/misc/dhcp 0775 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp

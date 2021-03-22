@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-import /vendor/etc/init/hw/init.smdk4x12.usb.rc
-
 ## init goal order
 # early-init, init, late-init
 # early-fs, fs, post-fs, late-fs, post-fs-data

@@ -149,7 +149,7 @@ on boot
 # Wifi firmware reload path
     chown wifi wifi /sys/module/brcmfmac/parameters/alternative_fw_path
 
-on late-fs
+on early-fs
     start bootanim
 
 on zygote-start

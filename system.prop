@@ -16,6 +16,7 @@
 
 ro.sf.lcd_density=320
 ro.hardware.hwcomposer=drm
+ro.hardware.gralloc=gbm
 ro.hardware.egl=mesa
 ro.opengles.version=131072
 vendor.hwc.backend_override=client
